@@ -1,4 +1,11 @@
-# Hackchallenges - Building In-Vehicle Applications with telemetry from Carla and AirSim Simulation
+
+# Eclipse SDV Hackathon on BCX2022
+
+One-Pager ([PowerPoint](./assets/BCX_Onepager_Virtual_Vehicle_Application(with_simulation).pptx), [PDF](./assets/BCX_Onepager_Virtual_Vehicle_Application(with_simulation).jpg))
+
+# Welcome to the "Virtual Vehicle Application with Simulation" hack challenge!
+
+## Hackchallenges - Building In-Vehicle Applications with telemetry from Carla and AirSim Simulation
 
 In this repository we collect the content and instruction for the hackchallenge around building in-vehicle applications using telemetry data generated with simulation tools. For this hackchallenge we considered 2 simulation tools, Carla and AirSim although you are not restricted to only these. If you have experience with other simulation tools and have a great idea on how to use it in this hackchallenge please do so.
  
