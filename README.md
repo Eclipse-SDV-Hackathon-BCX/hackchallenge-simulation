@@ -7,7 +7,16 @@ One-Pager ([PowerPoint](./assets/BCX_Onepager_Virtual_Vehicle_Application(with_s
 
 ## Hackchallenges - Building In-Vehicle Applications with telemetry from Carla and AirSim Simulation
 
-In this repository we collect the content and instruction for the hackchallenge around building in-vehicle applications using telemetry data generated with simulation tools. For this hackchallenge we considered 2 simulation tools, Carla and AirSim although you are not restricted to only these. If you have experience with other simulation tools and have a great idea on how to use it in this hackchallenge please do so.
+In this repository we collect the content and instruction for the hackchallenge around building in-vehicle applications using telemetry data generated with simulation tools. 
+
+As a hack challenge for Eclipse SDV, you will have the opportunity to get involved with the technology and experience some of the challenges when dealing with connected vehicles and build the next generation of software defined vehicles. You will also get to know a few more open source projects along the way.
+
+For this hackchallenge we considered 2 simulation tools, Carla and AirSim although you are not restricted to only these. If you have experience with other simulation tools and have a great idea on how to use it in this hackchallenge please do so.
+
+## Architecture
+
+![](assets/Virtual_Vehicle_Application_Architecture(1).png)
+![](assets/Virtual_Vehicle_Application_Architecture(2).png)
  
 ## Setup of simulation environment
 
@@ -31,10 +40,6 @@ You can find additional information here [Kuksa](https://github.com/eclipse/kuks
 
 * Eclipse Velocitas provides a development toolchain to create containerized in-vehicle applications (Vehicle Apps) that offers a comfortable, fast and efficient development experience to increase the velocity of a development team. 
 You can find additional information here [Velocitas](https://github.com/eclipse-velocitas) 
-
-## Architecture
-
-
 
 ## Routing and Map Challenge
 
