@@ -1,10 +1,33 @@
-# Hackchallenges with Carla Simulation
+# Hackchallenges - Building In-Vehicle Applications with telemetry from Carla and AirSim Simulation
 
-In this repository we collect the content and instruction for the hackchallenge around the Carla simulation
+In this repository we collect the content and instruction for the hackchallenge around building in-vehicle applications using telemetry data generated with simulation tools. For this hackchallenge we considered 2 simulation tools, Carla and AirSim although you are not restricted to only these. If you have experience with other simulation tools and have a great idea on how to use it in this hackchallenge please do so.
+ 
+## Setup of simulation environment
 
-## Setup of Carla simulation environment
+Both Carla and AirSim require a GPU in order to run. If your computer does not have a GPU, you can setup an Azure Virtual Machine.  
 
-For the following two Hack ideas we rely on the simulation with [Carla](carla.org).
+### Link and Information about Carla simulation environment
+
+You can find detailed information about [Carla](carla.org).
+
+### Link and Information about AirSim simulation environment
+
+You can find detailed information about [AirSim](https://microsoft.github.io/AirSim/).
+
+## Links and Information about Eclipse Software Defined Vehicle Projects
+
+* The Eclipse Chariott project aims to simplify and enhance in-vehicle software developer productivity by providing a metadata-driven middleware/abstraction layer that allows modern application programming models to target in-vehicle functions through a digital representation of vehicle state and capabilities and provides an extensible and dynamic architecture to access the vehicle hardware and sensors.
+You can find additional information here [Chariott](https://github.com/eclipse/chariott)
+
+* KUKSA.val provides in-vehicle software components for working with in-vehicle signals modelled using the COVESA VSS data model.
+You can find additional information here [Kuksa](https://github.com/eclipse/kuksa.val)
+
+* Eclipse Velocitas provides a development toolchain to create containerized in-vehicle applications (Vehicle Apps) that offers a comfortable, fast and efficient development experience to increase the velocity of a development team. 
+You can find additional information here [Velocitas](https://github.com/eclipse-velocitas) 
+
+## Architecture
+
+
 
 ## Routing and Map Challenge
 
