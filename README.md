@@ -35,8 +35,8 @@ You can find detailed information about [AirSim](https://microsoft.github.io/Air
 * The Eclipse Chariott project aims to simplify and enhance in-vehicle software developer productivity by providing a metadata-driven middleware/abstraction layer that allows modern application programming models to target in-vehicle functions through a digital representation of vehicle state and capabilities and provides an extensible and dynamic architecture to access the vehicle hardware and sensors.
 You can find additional information here [Chariott](https://github.com/eclipse/chariott)
 
-* KUKSA.val provides in-vehicle software components for working with in-vehicle signals modelled using the COVESA VSS data model.
-You can find additional information here [Kuksa](https://github.com/eclipse/kuksa.val)
+* KUKSA.val provides software components for working with in-vehicle signals modelled using the [COVESA VSS data model](https://covesa.github.io/vehicle_signal_specification/).
+You can find additional information here [Kuksa.val](https://github.com/eclipse/kuksa.val)
 
 * Eclipse Velocitas provides a development toolchain to create containerized in-vehicle applications (Vehicle Apps) that offers a comfortable, fast and efficient development experience to increase the velocity of a development team. 
 You can find additional information here [Velocitas](https://github.com/eclipse-velocitas) 
@@ -51,14 +51,22 @@ The Carla [Python API](https://carla.readthedocs.io/en/latest/python_api/) allow
 
 So one can use both methods to get data for other applications which are then controlled and influenced by the simulation. 
 
-The [Velocitas project](https://eclipse-velocitas.github.io/velocitas-docs/) enables the development of Vehicle specific apps and by  integrating with [Chariott project](https://github.com/eclipse/chariott),a modern application programming model built on [Rust](https://www.rust-lang.org/) exposes a gRPC service that provides a common interface for interacting with applications and vehicle hardware, enabling application lifecycle management between applications and the vehicle.
+Part of this approach is to consume the vehicle specific data in your application from the [Kuksa.val Data Broker](https://github.com/eclipse/kuksa.val/tree/master/kuksa_databroker) which abstracts the specifics of the vehicle internal data sources and sinks by using the data model of the [Vehicle Signal Specification (VSS)](https://covesa.github.io/vehicle_signal_specification/).
 
-The [Dog Mode Application](https://github.com/eclipse/chariott/blob/main/examples/applications/README.md) is an example of such an in-vehicle application.   
+The [Velocitas project](https://eclipse-velocitas.github.io/velocitas-docs/) enables the development of Vehicle specific apps. By integrating with the [Chariott project](https://github.com/eclipse/chariott), a modern application programming model built on [Rust](https://www.rust-lang.org/), it exposes a gRPC service that provides a common interface for interacting with applications and vehicle hardware, enabling application lifecycle management between applications and the vehicle.
 
-Part of this approach is to consume the vehicle specific data from the [Kuksa.val Data Broker](https://github.com/eclipse/kuksa.val/tree/master/kuksa_databroker) which abstracts the specifics of the vehicle internal data sources and sinks by using the data model of the [Vehicle Signal Specification (VSS)](https://covesa.github.io/vehicle_signal_specification/). 
+The [Dog Mode Application](https://github.com/eclipse/chariott/blob/main/examples/applications/README.md) is an example of such an in-vehicle application built with Chariott.   
 
 One benefit of using the same data model in the Velocitas-App for consuming vehicle specific data is that one can easily port the application from the simulation environment to a vehicle which provides data in the same format.
 
 So to realize a use case by writing a Velocitas/Chariott Application, you need to find a way to consume the data from the Carla and/or AirSim simulation, convert it to VSS, and then write it into the Kuksa Data Broker from which the Velocitas/Chariott Application can then consume and use. 
+
+## interacting with Kuksa.val
+
+As mentioned above the Kuksa.val project provides artifacts for handling and storing in-vehicle data based on the COVESA VSS specification. The idea is to abstract the specifics of the deeply-embedded part within a vehicle for other applications which consume the data from Kuksa.val. To enable this, one needs so-called ["Feeders"](https://github.com/eclipse/kuksa.val.feeders) which convert the data from the embedded systems (e.g., CAN or SOME/IP) to VSS, write it into the Kuksa.val data broker, and vice-versa. 
+
+Part of this challenge is to write a custom feeder for transfering data being relevant for your application between the simulation and the Kuksa.val data broker. One can access the data broker through a [gRPC API](https://github.com/eclipse/kuksa.val/tree/master/kuksa_databroker#test-the-broker---run-clientcli) which allows to [subscribe with specific queries](https://github.com/eclipse/kuksa.val/blob/master/kuksa_databroker/doc/QUERY.md). 
+
+Note, that an alternative approach achiving a similar goal would be to use the Kuksa.val server. However, for the remainder of this hack challenge we focus on the Kuksa.val data broker since it is part of the default Velocitas Dev-Container. 
 
 ## This README will self-destruct in five seconds. Good luck.
