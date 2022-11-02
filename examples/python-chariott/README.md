@@ -21,3 +21,6 @@ python -m grpc_tools.protoc --proto_path ~/repos/chariott/proto --python_out=. -
 
 python -m grpc_tools.protoc --proto_path ~/repos/chariott/proto --python_out=. --grpc_python_out=. ~/repos/chariott/proto/chariott/runtime/v1/runtime.proto
 ```
+
+This will create a folder structure ./chariott
+
