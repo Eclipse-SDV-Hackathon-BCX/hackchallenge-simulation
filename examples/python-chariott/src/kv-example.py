@@ -1,7 +1,7 @@
 import grpc
 from datetime import datetime
 import chariott.runtime.v1.runtime_pb2 as runtime_pb2
-import chariott.common.v1.common_pb2 as common_pb2
+import chariott.common.v1.common_pb2 as pb2
 import chariott.runtime.v1.runtime_pb2_grpc as runtime_pb2_grpc
 
 # Open a channel to the server
@@ -10,22 +10,19 @@ stub = runtime_pb2_grpc.ChariottServiceStub(channel)
 
 
 # Step 1: Lets do a key-value pair write to the store
+# ---------------------------------------------------
+# Create a FulfillRequest, set the intent to WriteIntent and add the key "date-time" and the value to the current time (as string)
 request = runtime_pb2.FulfillRequest (
     namespace = "sdv.kvs",
-    intent = common_pb2.Intent()
+    intent = pb2.Intent()
 )
 
-# Fill the intent with the type
-writeIntent=common_pb2.WriteIntent()
-writeIntent.key = "date-time"
-
-value = common_pb2.Value()
-value.string = str(datetime.now())
-writeIntent.value.CopyFrom(value)
+writeIntent=pb2.WriteIntent(key="date-time")
+writeIntent.value.CopyFrom(pb2.Value(string=str(datetime.now())))
 
 request.intent.write.CopyFrom(writeIntent)
 
-print("Request: " + str(request))
+print("Write Request: " + str(request))
 
 # Make and print the request
 response = stub.Fulfill(request)
@@ -36,16 +33,32 @@ print (response)
 # ------------------------------------
 request = runtime_pb2.FulfillRequest (
     namespace = "sdv.kvs",
-    intent = common_pb2.Intent()
+    intent = pb2.Intent()
 )
 
-# Fill the intent with the type
-request.intent.read.CopyFrom(common_pb2.ReadIntent(key="date-time"))
-print("Request: " + str(request))
+# Fill the intent with the ReadIntent object.
+request.intent.read.CopyFrom(pb2.ReadIntent(key="date-time"))
+print("Read Request: " + str(request))
 
 # Make and print the request
 response = stub.Fulfill(request)
 print (response)
+
+
+# Step 3: Now it is time to discover the service end points
+# ---------------------------------------------------------
+request = runtime_pb2.FulfillRequest (
+    namespace = "sdv.kvs",
+    intent = pb2.Intent()
+)
+
+request.intent.discover.CopyFrom(pb2.DiscoverIntent())
+print("Discover Request: " + str(request))
+
+# Make and print the request
+response = stub.Fulfill(request)
+print (response)
+
 
 
 
