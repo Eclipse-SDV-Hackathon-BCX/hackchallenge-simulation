@@ -72,7 +72,7 @@ One benefit of using the same data model in the Velocitas-App for consuming vehi
 
 So to realize a use case by writing a Velocitas/Chariott Application, you need to find a way to consume the data from the Carla and/or AirSim simulation, convert it to VSS, and then write it into the Kuksa Data Broker from which the Velocitas/Chariott Application can then consume and use. 
 
-## interacting with Kuksa.val
+### interacting with Kuksa.val
 
 As mentioned above the Kuksa.val project provides artifacts for handling and storing in-vehicle data based on the COVESA VSS specification. The idea is to abstract the specifics of the deeply-embedded part within a vehicle for other applications which consume the data from Kuksa.val. To enable this, one needs so-called ["Feeders"](https://github.com/eclipse/kuksa.val.feeders) which convert the data from the embedded systems (e.g., CAN or SOME/IP) to VSS, write it into the Kuksa.val data broker, and vice-versa. 
 
