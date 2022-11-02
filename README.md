@@ -20,7 +20,12 @@ For this hackchallenge we considered 2 simulation tools, Carla and AirSim althou
  
 ## Setup of simulation environment
 
-Both Carla and AirSim require a GPU in order to run. If your computer does not have a GPU, you can setup an Azure Virtual Machine.  
+Both Carla and AirSim require a GPU in order to run. 
+
+If your computer does not have a GPU, you can setup an [GPU optimized virtual machine on Azure](https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-gpu). We have pre-tested both Carla and AirSim on [NVv4-series](https://learn.microsoft.com/en-us/azure/virtual-machines/nvv4-series).
+
+Each hack challenge team have access to an Azure Pass to use during the Hackathon. Talk to your hack coach to get yours.
+You will need to activate it before you can use. See [Redeeming a Microsoft Azure Pass Promo Code](https://www.microsoftazurepass.com/Home/HowTo?Length=5).
 
 ### Link and Information about Carla simulation environment
 
@@ -28,7 +33,13 @@ You can find detailed information about [Carla](carla.org).
 
 ### Link and Information about AirSim simulation environment
 
-You can find detailed information about [AirSim](https://microsoft.github.io/AirSim/).
+AirSim is a simulator for drones, cars and more, built on Unreal Engine (we now also have an experimental Unity release). It is open-source, cross platform, and supports software-in-the-loop simulation with popular flight controllers such as PX4 & ArduPilot and hardware-in-loop with PX4 for physically and visually realistic simulations. It is developed as an Unreal plugin that can simply be dropped into any Unreal environment. Similarly, we have an experimental release for a Unity plugin.
+
+In this hack challenge you will use it to generate telemetry data. See [Your mission](#Your mission,-should-you-choose-to-accept-it...) 
+
+Although you can setup your own Unreal environment, we recommend you to download one of the [precompiled binaries](https://github.com/Microsoft/AirSim/releases) and run to get started immediately.
+
+You can find more about [AirSim](https://microsoft.github.io/AirSim/).
 
 ## Links and Information about Eclipse Software Defined Vehicle Projects
 
