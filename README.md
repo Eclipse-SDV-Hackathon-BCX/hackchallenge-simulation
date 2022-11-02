@@ -35,7 +35,7 @@ You can find detailed information about [Carla](carla.org).
 
 AirSim is a simulator for drones, cars and more, built on Unreal Engine (we now also have an experimental Unity release). It is open-source, cross platform, and supports software-in-the-loop simulation with popular flight controllers such as PX4 & ArduPilot and hardware-in-loop with PX4 for physically and visually realistic simulations. It is developed as an Unreal plugin that can simply be dropped into any Unreal environment. Similarly, we have an experimental release for a Unity plugin.
 
-In this hack challenge you will use it to generate telemetry data. See [Your mission](#Your mission,-should-you-choose-to-accept-it...) 
+In this hack challenge you will use it to generate telemetry data. See [Your mission](#Your-mission-should-you-choose-to-accept-it) 
 
 Although you can setup your own Unreal environment, we recommend you to download one of the [precompiled binaries](https://github.com/Microsoft/AirSim/releases) and run to get started immediately.
 
