@@ -59,6 +59,10 @@ print("Discover Request: " + str(request))
 response = stub.Fulfill(request)
 print (response)
 
+# Step 4: Open a channel for receiving events
+# -------------------------------------------
+
+request = runtime_
 
 
 
