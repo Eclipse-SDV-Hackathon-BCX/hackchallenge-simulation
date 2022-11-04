@@ -22,11 +22,14 @@ For this hackchallenge we considered 2 simulation tools, Carla and AirSim althou
 
 To complete the hack challenge depicted in the architecture slide you need the following content and repositories available on your machine:
 
-- **Simulation Environment**:
-    - Carla: Setup Instruction as desribed in the ["Let’s Play OpenStreepMap and CARLA"](https://github.com/Eclipse-SDV-Hackathon-BCX/hackchallenge-lets-play-osm-and-carla/blob/main/docs/step-1-first-contact.md) documentation)
+- **Simulation Environment (one of the below)**:
+    - Carla: Setup Instruction as described in the ["Let’s Play OpenStreepMap and CARLA"](https://github.com/Eclipse-SDV-Hackathon-BCX/hackchallenge-lets-play-osm-and-carla/blob/main/docs/step-1-first-contact.md) documentation)
+    - Airsim: Setup Instructions and Binaries as described in [precompiled binaries](https://github.com/Microsoft/AirSim/releases)
 - **Kuksa Data Broker (on of the below)**:
     - [Kuksa.val GitHub](https://github.com/eclipse/kuksa.val/tree/master/kuksa_databroker#build-and-run-databroker)
     - [Kuksa.val Data Broker Docker Container](https://github.com/eclipse/kuksa.val/pkgs/container/kuksa.val%2Fdatabroker)
+- **Chariott Application Programming Model**:
+    - [Chariott](https://github.com/eclipse/chariott)
 - **Fork of Velocitas Template Repository for your application**
     - [Velocitas Template Repository](https://github.com/eclipse-velocitas/vehicle-app-python-template)
     - [Velocitas Quickstart Documentation](https://eclipse-velocitas.github.io/velocitas-docs/docs/tutorials/quickstart/)
