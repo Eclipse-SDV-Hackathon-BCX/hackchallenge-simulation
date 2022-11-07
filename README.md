@@ -82,7 +82,7 @@ Part of this approach is to consume the vehicle specific data in your applicatio
 
 The [Velocitas project](https://eclipse-velocitas.github.io/velocitas-docs/) enables the development of Vehicle specific apps. By integrating with the [Chariott project](https://github.com/eclipse/chariott), a modern application programming model built on [Rust](https://www.rust-lang.org/), it exposes a gRPC service that provides a common interface for interacting with applications and vehicle hardware, enabling application lifecycle management between applications and the vehicle.
 
-The [Dog Mode Application](https://github.com/eclipse/chariott/blob/main/examples/applications/README.md) is an example of such an in-vehicle application built with Chariott.   
+The [Dog Mode Application](https://github.com/eclipse/chariott/blob/main/examples/applications/README.md) is an example of such an in-vehicle application built with Chariott. There is a [sample python application](examples/python-chariott) that demonstrates how to use gRPC, which can be used as a base to use both Velocitas and Chariott.
 
 One benefit of using the same data model in the Velocitas-App for consuming vehicle specific data is that one can easily port the application from the simulation environment to a vehicle which provides data in the same format.
 
